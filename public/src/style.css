@@ -1,0 +1,59 @@
+/* ./index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="url"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="search"],
+  input[type="tel"],
+  select,
+  select[multiple],
+  textarea {
+    @apply mb-3 block h-10 w-full rounded-md border border-ocean-100 bg-white pl-2 pr-2 text-base shadow-sm dark:bg-slate-700;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply block rounded-md shadow-sm;
+  }
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options,
+.ql-picker-label {
+  @apply bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100;
+}
+
+.ql-snow .ql-stroke {
+  @apply stroke-slate-800 dark:stroke-slate-100 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Sana Sans, Arial, sans-serif;
+}
+
+.btn {
+  @apply rounded bg-ocean-100 py-2 px-4 font-bold text-white hover:bg-ocean-200;
+}
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+a {
+  @apply text-blue-600 underline visited:text-purple-600 hover:text-blue-800 dark:visited:text-purple-300;
+}
