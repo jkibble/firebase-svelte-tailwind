@@ -5,7 +5,7 @@ import path from "path";
 import tsconfigPaths from "vite-tsconfig-paths";
 import fs from "fs";
 
-const template = fs.readFileSync("./layout.html", "utf-8");
+const template = fs.readFileSync("./src/templates/layout.tpl", "utf-8");
 
 let resolvers = [];
 
@@ -18,15 +18,7 @@ entries.forEach((file) => {
   const tpl = template.replace(/\{entry\}/, entry);
   const out = file.replace(/^\/src\/pages\//, "").replace(/\.svelte$/, "");
 
-  if (out === "index") {
-    fs.writeFileSync(`./src/${out}.html`, tpl, "utf-8");
-  } else {
-    if (!fs.existsSync(`./src/${out}`)) {
-      fs.mkdirSync(`./src/${out}`);
-    }
-
-    fs.writeFileSync(`./src/${out}/index.html`, tpl, "utf-8");
-  }
+  fs.writeFileSync(`./src/templates/${out}.html`, tpl, "utf-8");
 });
 
 // https://vitejs.dev/config/
@@ -35,9 +27,9 @@ export default defineConfig({
   root: path.resolve("./src"),
   build: {
     emptyOutDir: true,
-    outDir: path.join("../dist"),
+    outDir: path.join("../public"),
     rollupOptions: {
-      input: glob.sync(path.resolve("src/**/*.html")),
+      input: glob.sync(path.resolve("src/templates/*.html")),
       output: {
         assetFileNames: "assets/[name].[hash][extname]",
         entryFileNames: "entry/[name].[hash].js",

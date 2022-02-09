@@ -1,5 +1,5 @@
 <script>
-  import I18n from "/lib/i18n.svelte";
+  import I18n from "/components/i18n.svelte";
 </script>
 
 <h1>Translations play ground</h1>

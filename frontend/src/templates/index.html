@@ -17,7 +17,7 @@
       id="menu"
     ></header>
     <script type="module">
-      import Menu from "/pages/menu.svelte";
+      import Menu from "/components/menu.svelte";
       const menu = new Menu({
         target: document.getElementById("menu"),
       });
@@ -25,7 +25,7 @@
       export default menu;
     </script>
     <script type="module">
-      import App from "/pages/menu.svelte";
+      import App from "/pages/index.svelte";
 
       const app = new App({
         target: document.getElementById("app"),

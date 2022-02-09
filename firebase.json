@@ -10,12 +10,16 @@
     ]
   },
   "hosting": {
-    "public": "./public/dist",
+    "public": "./frontend/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
+        "source": "/two/**",
+        "destination": "/templates/two.html"
+      },
+      {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "/templates/index.html"
       }
     ]
   },

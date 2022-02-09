@@ -19,7 +19,7 @@
   select,
   select[multiple],
   textarea {
-    @apply border-ocean-100 mb-3 block h-10 w-full rounded-md border bg-white pl-2 pr-2 text-base shadow-sm dark:bg-slate-700;
+    @apply mb-3 block h-10 w-full rounded-md border bg-white pl-2 pr-2 text-base shadow-sm dark:bg-slate-700;
   }
 
   input[type="checkbox"],
